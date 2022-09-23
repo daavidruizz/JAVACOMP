@@ -1,0 +1,60 @@
+public class Analizador {
+
+	public static String masCercano(double ratio) {
+			
+		if (ratio < 0.0008) {
+				return "1";
+				
+			} else if(0.0008 <= ratio && ratio < 0.09) {
+				return "LOGN";
+			
+			} else if(0.09 <=ratio && ratio  < 0.39) { //04                      
+				return "N";	
+				
+			} else if (0.39 <= ratio && ratio < 0.57) { 
+				return "N2";
+				
+			} else if(0.57 <=ratio && ratio < 1.2) {
+				return "NLOGN";
+				
+			} else if (1.2 <= ratio && ratio < 3.5) { 
+				return "N3";
+				
+			} else if(3.5 <= ratio && ratio < 4.5){
+				return "2N";
+			} else {
+				return "NF";
+			}
+	}
+	
+	public static void main(String arg[]) {
+		
+		int n1 = 400;
+		int n2 = 800;
+		
+        Temporizador t = new Temporizador();
+        
+        long t1;
+        long t2;
+        
+        double ratio;
+
+			t.iniciar(); //inicio temp
+			Algoritmo.f(n1); //calculo algorit
+
+			t.parar(); //paro
+			t1 = t.tiempoPasado();
+			
+			t.reiniciar(); //reinicio temp
+			t.iniciar();  //inicio
+			Algoritmo.f(n2); //algoritmo2
+
+			t.parar();
+			t2 = t.tiempoPasado();
+			//System.out.println(ratio = (double)t2/t1);
+			ratio = (double)t2/t1; //calculo ratio
+			
+			System.out.println(masCercano(ratio)); //calculo masCercano
+		
+	}
+}

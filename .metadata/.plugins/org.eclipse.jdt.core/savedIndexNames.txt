@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\daavi\Documents\ECLIPSEUNI\.metadata\.plugins\org.eclipse.jdt.core
+2196199803.index
+320290182.index
+2639859685.index
